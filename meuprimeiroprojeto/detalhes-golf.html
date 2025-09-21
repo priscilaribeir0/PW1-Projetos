@@ -5,41 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Detalhes Volkswagen Golf - Ribeiro Multimarcas</title>
   <style>
-    /* Reset e variáveis de cor atualizadas */
+    /* Reset básico */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    /* Nova paleta de cores: Dourado + Preto */
     :root {
-      --verde-escuro: #0B3D2E;      /* Principal: elegante e tecnológico */
-      --verde-vibrante: #00A86B;    /* Detalhes e destaques modernos */
-      --preto-profundo: #0A0A0A;    /* Sofisticação e contraste */
-      --cinza-chumbo: #2F2F2F;      /* Apoio ao preto, textos secundários */
-      --branco-puro: #FFFFFF;       /* Clareza e equilíbrio */
+      --dourado-metalico: #FFD700;    /* Principal: destaque e elegância */
+      --dourado-escuro: #B8860B;      /* Profundidade e variação */
+      --preto-profundo: #0A0A0A;      /* Fundo e contraste */
+      --cinza-grafite: #2E2E2E;       /* Detalhes discretos */
+      --branco: #FFFFFF;              /* Equilíbrio e legibilidade */
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--cinza-chumbo); /* Fundo neutro com cinza chumbo */
-      color: var(--preto-profundo);
+      background-color: var(--preto-profundo); /* Base preta */
+      color: var(--branco); /* Textos principais em branco para contraste */
+      line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
+
+    a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--dourado-metalico);
+    }
+
     header {
-      background: var(--verde-escuro);
-      color: var(--branco-puro);
+      background-color: var(--preto-profundo);
+      color: var(--branco);
       padding: 1rem 2rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 5px rgba(11, 61, 46, 0.3); /* Sombra com verde escuro */
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(184, 134, 11, 0.3); /* Sombra com dourado escuro */
     }
+
+    /* Logo com letra R estilizada em dourado */
     .logo {
       font-weight: 900;
       font-size: 2rem;
+      font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
+      letter-spacing: 0.1em;
       position: relative;
+      color: var(--dourado-metalico); /* Dourado metálico para elegância */
+      cursor: default;
       user-select: none;
-      color: var(--branco-puro);
     }
+
+    /* Linha de movimento no R com degradê dourado */
     .logo::after {
       content: '';
       position: absolute;
@@ -47,73 +72,89 @@
       left: 1.6rem;
       width: 1.2rem;
       height: 0.15rem;
-      background: linear-gradient(90deg, transparent, var(--verde-vibrante), transparent);
+      background: linear-gradient(90deg, transparent, var(--dourado-escuro), transparent);
       transform: skew(-20deg);
       border-radius: 2px;
     }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 2rem;
     }
-    nav a {
-      color: var(--branco-puro);
+
+    nav ul li a {
       font-weight: 700;
-      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.25rem 0;
       border-bottom: 2px solid transparent;
-      padding-bottom: 0.2rem;
-      transition: border-color 0.3s, color 0.3s;
+      transition: border-color 0.3s ease, color 0.3s ease;
     }
-    nav a:hover, nav a:focus {
-      border-bottom-color: var(--verde-vibrante);
-      color: var(--verde-vibrante);
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      border-bottom: 2px solid var(--dourado-metalico);
+      color: var(--dourado-metalico);
     }
+
+    /* Estilos para Páginas de Detalhes */
     main {
       flex: 1;
-      max-width: 900px;
-      margin: 2rem auto;
-      background: var(--branco-puro);
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .car-detail-container {
+      background: var(--cinza-grafite); /* Fundo cinza grafite para consistência */
       border-radius: 8px;
       padding: 2rem;
-      box-shadow: 0 2px 10px rgba(11, 61, 46, 0.2); /* Sombra com verde escuro */
+      box-shadow: 0 2px 10px rgba(184, 134, 11, 0.2); /* Sombra com dourado escuro */
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      color: var(--preto-profundo);
+      color: var(--branco); /* Textos em branco */
     }
-    .car-image {
+
+    .car-detail-container .car-image {
       flex: 1 1 300px;
       max-width: 400px;
       border-radius: 8px;
       object-fit: cover;
-      box-shadow: 0 2px 8px rgba(11, 61, 46, 0.15); /* Sombra sutil com verde */
+      box-shadow: 0 2px 8px rgba(184, 134, 11, 0.15); /* Sombra sutil com dourado */
     }
-    .car-info {
+
+    .car-detail-container .car-info {
       flex: 1 1 300px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .car-info h1 {
+
+    .car-detail-container .car-info h1 {
       font-size: 2rem;
       font-weight: 900;
-      color: var(--verde-escuro); /* Título em verde escuro para destaque */
+      color: var(--dourado-metalico); /* Título em dourado metálico */
       margin-bottom: 1rem;
     }
-    .car-info p {
+
+    .car-detail-container .car-info p {
       margin-bottom: 0.75rem;
       font-size: 1rem;
-      color: var(--cinza-chumbo); /* Textos secundários em cinza chumbo */
+      color: var(--branco); /* Textos em branco para legibilidade */
     }
-    .car-price {
+
+    .car-detail-container .car-price {
       font-size: 1.5rem;
       font-weight: 900;
-      color: var(--verde-vibrante); /* Preço em verde vibrante para destaque moderno */
+      color: var(--dourado-metalico); /* Preço em dourado metálico */
       margin: 1rem 0;
     }
+
     .btn-back {
-      background: var(--verde-escuro);
-      color: var(--branco-puro);
+      background: var(--dourado-metalico);
+      color: var(--preto-profundo); /* Texto preto no botão */
       border: none;
       padding: 0.75rem 1.5rem;
       border-radius: 5px;
@@ -126,56 +167,74 @@
       margin-top: 1rem;
       align-self: flex-start;
     }
+
     .btn-back:hover, .btn-back:focus {
-      background: var(--verde-vibrante);
-      box-shadow: 0 4px 8px rgba(0, 168, 107, 0.3); /* Hover com verde vibrante e sombra */
+      background: var(--dourado-escuro); /* Hover com dourado escuro */
+      box-shadow: 0 4px 8px rgba(184, 134, 11, 0.3);
       outline: none;
     }
+
     footer {
-      background: var(--verde-escuro);
-      color: var(--branco-puro);
+      background-color: var(--preto-profundo);
+      color: var(--branco);
       text-align: center;
       padding: 1.5rem 2rem;
-      font-weight: 600;
       font-size: 0.9rem;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      font-weight: 600;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
       margin-top: auto;
     }
+
+    /* Responsividade */
     @media (max-width: 700px) {
-      main {
+      .car-detail-container {
         flex-direction: column;
         align-items: center;
       }
-      .car-image, .car-info {
+      .car-detail-container .car-image, .car-detail-container .car-info {
         max-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo" aria-label="Logo Ribeiro Multimarcas">R</div>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="index.html" tabindex="0">Início</a></li>
-        <li><a href="index.html#carros" tabindex="0">Carros</a></li>
-        <li><a href="#" tabindex="0">Sobre</a></li>
-        <li><a href="#" tabindex="0">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <img src="imagens/ribeiro.jpg" width="200" height="100" alt="Logo Ribeiro Multimarcas" class="logo" />
+  <nav aria-label="Menu principal">
+    <ul>
+      <li><a href="#inicio" tabindex="0">Início</a></li>
+      <li><a href="#carros" tabindex="0">Carros</a></li>
+      <li><a href="#" tabindex="0">Sobre</a></li>
+      <li><a href="#" tabindex="0">Contato</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main>
-    <img src="https://cdn.motor1.com/images/mgl/0AN2r/s1/volkswagen-golf-gti.jpg" alt="Volkswagen Golf 2.0 TSI vermelho" class="car-image" />
-    <div class="car-info">
-      <h1>Volkswagen Golf 2.0 TSI</h1>
-      <p><strong>Ano:</strong> 2023/2024</p>
-      <p><strong>Quilometragem:</strong> 12.000 km</p>
-      <p><strong>Câmbio:</strong> Automático</p>
-      <p class="car-price">R$ 145.900</p>
-      <p>O Volkswagen Golf 2.0 TSI é um hatch esportivo que combina desempenho, conforto e tecnologia. Ideal para quem busca um carro versátil, com design moderno e excelente dirigibilidade.</p>
-      <button class="btn-back" onclick="window.history.back()" aria-label="Voltar para a lista de carros">Voltar</button>
-    </div>
+    <section class="car-detail-container" aria-label="Detalhes do Volkswagen Golf 2.0 TSI">
+      <img src="imagens/Golf.jpg" alt="Volkswagen Golf 2.0 TSI vermelho" class="car-image" />
+      <div class="car-info">
+        <h1>Volkswagen Golf 2.0 TSI</h1>
+        <p><strong>Ano:</strong> 2023/2024</p>
+        <p><strong>Quilometragem:</strong> 12.000 km</p>
+        <p><strong>Câmbio:</strong> Automático</p>
+        <p class="car-price">R$ 145.900</p>
+        <p>O Volkswagen Golf 2.0 TSI é um hatch esportivo que combina desempenho, conforto e tecnologia. Ideal para quem busca um carro versátil, com design moderno e excelente dirigibilidade.</p>
+        <button class="btn-back" onclick="window.history.back()" aria-label="Voltar para a lista de carros">Voltar</button>
+      </div>
+    </section>
   </main>
 
   <footer>

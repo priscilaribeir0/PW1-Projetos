@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ribeiro Multimarcas - Carros Seminovos de Qualidade</title>
+  <title>Ribeiro Multimarcas - Seu carro novo está aqui</title>
   <style>
     /* Reset básico */
     * {
@@ -12,19 +12,19 @@
       box-sizing: border-box;
     }
 
-    /* Cores principais atualizadas */
+    /* Nova paleta de cores: Dourado + Preto */
     :root {
-      --verde-escuro: #0B3D2E;      /* Principal: elegante e tecnológico */
-      --verde-vibrante: #00A86B;    /* Detalhes e destaques modernos */
-      --preto-profundo: #0A0A0A;    /* Sofisticação e contraste */
-      --cinza-chumbo: #2F2F2F;      /* Apoio ao preto, para fundos e texto secundário */
-      --branco-puro: #FFFFFF;       /* Clareza, equilíbrio e contraste */
+      --dourado-metalico: #FFD700;    /* Principal: destaque e elegância */
+      --dourado-escuro: #B8860B;      /* Profundidade e variação */
+      --preto-profundo: #0A0A0A;      /* Fundo e contraste */
+      --cinza-grafite: #2E2E2E;       /* Detalhes discretos */
+      --branco: #FFFFFF;              /* Equilíbrio e legibilidade */
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--cinza-chumbo);
-      color: var(--preto-profundo);
+      background-color: var(--preto-profundo); /* Base preta */
+      color: var(--branco); /* Textos principais em branco para contraste */
       line-height: 1.6;
       min-height: 100vh;
       display: flex;
@@ -32,39 +32,39 @@
     }
 
     a {
-      color: var(--branco-puro);
+      color: var(--branco);
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
     a:hover {
-      color: var(--verde-vibrante);
+      color: var(--dourado-metalico);
     }
 
     header {
-      background-color: var(--verde-escuro);
-      color: var(--branco-puro);
+      background-color: var(--preto-profundo);
+      color: var(--branco);
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 2px 5px rgba(11, 61, 46, 0.3);
+      box-shadow: 0 2px 5px rgba(184, 134, 11, 0.3); /* Sombra com dourado escuro */
     }
 
-    /* Logo com letra R estilizada */
+    /* Logo com letra R estilizada em dourado */
     .logo {
       font-weight: 900;
       font-size: 2rem;
       font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
       letter-spacing: 0.1em;
       position: relative;
-      color: var(--branco-puro);
+      color: var(--dourado-metalico); /* Dourado metálico para elegância */
       cursor: default;
       user-select: none;
     }
 
-    /* Linha de movimento no R */
+    /* Linha de movimento no R com degradê dourado */
     .logo::after {
       content: '';
       position: absolute;
@@ -72,7 +72,7 @@
       left: 1.6rem;
       width: 1.2rem;
       height: 0.15rem;
-      background: linear-gradient(90deg, transparent, var(--verde-vibrante), transparent);
+      background: linear-gradient(90deg, transparent, var(--dourado-escuro), transparent);
       transform: skew(-20deg);
       border-radius: 2px;
     }
@@ -93,10 +93,11 @@
 
     nav ul li a:hover,
     nav ul li a:focus {
-      border-bottom: 2px solid var(--verde-vibrante);
-      color: var(--verde-vibrante);
+      border-bottom: 2px solid var(--dourado-metalico);
+      color: var(--dourado-metalico);
     }
 
+    /* Estilos para a Página Principal */
     main {
       flex: 1;
       padding: 2rem;
@@ -107,13 +108,13 @@
 
     /* Seção hero */
     .hero {
-      background-color: var(--verde-escuro);
-      color: var(--branco-puro);
+      background-color: var(--preto-profundo);
+      color: var(--branco);
       padding: 4rem 2rem;
       border-radius: 8px;
       text-align: center;
       margin-bottom: 3rem;
-      box-shadow: 0 4px 10px rgba(11, 61, 46, 0.5);
+      box-shadow: 0 4px 10px rgba(184, 134, 11, 0.5); /* Sombra com dourado escuro */
     }
 
     .hero h1 {
@@ -121,7 +122,7 @@
       font-weight: 900;
       margin-bottom: 1rem;
       font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
-      color: var(--branco-puro);
+      color: var(--dourado-metalico); /* Título em dourado para destaque */
     }
 
     .hero p {
@@ -129,7 +130,7 @@
       font-weight: 600;
       font-style: italic;
       letter-spacing: 0.05em;
-      color: var(--branco-puro);
+      color: var(--branco);
     }
 
     /* Grid de carros */
@@ -140,9 +141,9 @@
     }
 
     .car-card {
-      background-color: var(--branco-puro);
+      background-color: var(--cinza-grafite); /* Fundo cinza grafite para discrição */
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(11, 61, 46, 0.1);
+      box-shadow: 0 2px 8px rgba(184, 134, 11, 0.1); /* Sombra sutil com dourado escuro */
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -152,14 +153,14 @@
 
     .car-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 168, 107, 0.2); /* Hover com verde vibrante */
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2); /* Hover com dourado metálico */
     }
 
     .car-image {
       width: 100%;
       height: 180px;
       object-fit: cover;
-      background-color: var(--cinza-chumbo);
+      background-color: var(--preto-profundo); /* Fundo preto para imagens */
     }
 
     .car-info {
@@ -174,25 +175,25 @@
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
-      color: var(--verde-escuro);
+      color: var(--dourado-metalico); /* Títulos em dourado */
     }
 
     .car-details {
       font-size: 0.9rem;
-      color: var(--cinza-chumbo);
+      color: var(--branco); /* Detalhes em branco para legibilidade */
       margin-bottom: 1rem;
     }
 
     .car-price {
       font-size: 1.2rem;
       font-weight: 900;
-      color: var(--verde-vibrante);
+      color: var(--dourado-metalico); /* Preços em dourado metálico */
       margin-bottom: 1rem;
     }
 
     .btn-details {
-      background-color: var(--verde-escuro);
-      color: var(--branco-puro);
+      background-color: var(--dourado-metalico);
+      color: var(--preto-profundo); /* Texto preto no botão dourado para contraste */
       border: none;
       padding: 0.6rem 1rem;
       border-radius: 4px;
@@ -206,19 +207,19 @@
 
     .btn-details:hover,
     .btn-details:focus {
-      background-color: var(--verde-vibrante);
-      box-shadow: 0 4px 8px rgba(0, 168, 107, 0.3);
+      background-color: var(--dourado-escuro); /* Hover com dourado escuro para profundidade */
+      box-shadow: 0 4px 8px rgba(184, 134, 11, 0.3);
       outline: none;
     }
 
     footer {
-      background-color: var(--verde-escuro);
-      color: var(--branco-puro);
+      background-color: var(--preto-profundo);
+      color: var(--branco);
       text-align: center;
       padding: 1.5rem 2rem;
       font-size: 0.9rem;
       font-weight: 600;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
       margin-top: auto;
     }
 
@@ -245,30 +246,30 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo" aria-label="Logo Ribeiro Multimarcas">R</div>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="#inicio" tabindex="0">Início</a></li>
-        <li><a href="#carros" tabindex="0">Carros</a></li>
-        <li><a href="#" tabindex="0">Sobre</a></li>
-        <li><a href="#" tabindex="0">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <img src="imagens/ribeiro.jpg" width="200" height="100"alt="Logo Ribeiro Multimarcas" class="logo" />
+  <nav aria-label="Menu principal">
+    <ul>
+      <li><a href="#inicio" tabindex="0">Início</a></li>
+      <li><a href="#carros" tabindex="0">Carros</a></li>
+      <li><a href="#" tabindex="0">Sobre</a></li>
+      <li><a href="#" tabindex="0">Contato</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main>
     <!-- Seção Hero -->
     <section id="inicio" class="hero">
       <h1>Ribeiro Multimarcas</h1>
-      <p>Carros seminovos de qualidade superior</p>
+      <p>Seu carro novo está aqui</p>
     </section>
 
     <!-- Lista de Carros -->
     <section id="carros" class="car-list">
       <!-- Card 1: Volkswagen Golf -->
       <article class="car-card" aria-label="Volkswagen Golf 2.0 TSI">
-        <img src="https://cdn.motor1.com/images/mgl/0AN2r/s1/volkswagen-golf-gti.jpg" alt="Volkswagen Golf 2.0 TSI vermelho" class="car-image" />
+        <img src="imagens/Golf.jpg" alt="Volkswagen Golf 2.0 TSI vermelho" class="car-image" />
         <div class="car-info">
           <h3>Volkswagen Golf 2.0 TSI</h3>
           <div class="car-details">
@@ -281,7 +282,7 @@
 
       <!-- Card 2: Honda Civic -->
       <article class="car-card" aria-label="Honda Civic Touring 1.5 Turbo">
-        <img src="https://cdn.motor1.com/images/mgl/6x6mP/s1/honda-civic-2022.jpg" alt="Honda Civic Touring 1.5 Turbo prata" class="car-image" />
+        <img src="imagens/Civic.jpeg" alt="Honda Civic Touring 1.5 Turbo prata" class="car-image" />
         <div class="car-info">
           <h3>Honda Civic Touring 1.5 Turbo</h3>
           <div class="car-details">
@@ -294,7 +295,7 @@
 
       <!-- Card 3: Toyota Corolla -->
       <article class="car-card" aria-label="Toyota Corolla Altis Hybrid">
-        <img src="https://cdn.motor1.com/images/mgl/0AN2r/s1/toyota-corolla-altis-hybrid.jpg" alt="Toyota Corolla Altis Hybrid branco" class="car-image" />
+        <img src="imagens/Corolla.jpeg" alt="Toyota Corolla Altis Hybrid branco" class="car-image" />
         <div class="car-info">
           <h3>Toyota Corolla Altis Hybrid</h3>
           <div class="car-details">
@@ -307,7 +308,7 @@
 
       <!-- Card 4: Fiat Strada -->
       <article class="car-card" aria-label="Fiat Strada Freedom 1.3">
-        <img src="https://cdn.motor1.com/images/mgl/6x6mP/s1/fiat-strada-freedom.jpg" alt="Fiat Strada Freedom 1.3 prata" class="car-image" />
+        <img src="imagens/Strada.jpeg" alt="Fiat Strada Freedom 1.3 prata" class="car-image" />
         <div class="car-info">
           <h3>Fiat Strada Freedom 1.3</h3>
           <div class="car-details">
