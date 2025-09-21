@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalhes Volkswagen Golf - Ribeiro Multimarcas</title>
+  <style>
+    /* Reset e variáveis de cor atualizadas */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    :root {
+      --verde-escuro: #0B3D2E;      /* Principal: elegante e tecnológico */
+      --verde-vibrante: #00A86B;    /* Detalhes e destaques modernos */
+      --preto-profundo: #0A0A0A;    /* Sofisticação e contraste */
+      --cinza-chumbo: #2F2F2F;      /* Apoio ao preto, textos secundários */
+      --branco-puro: #FFFFFF;       /* Clareza e equilíbrio */
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--cinza-chumbo); /* Fundo neutro com cinza chumbo */
+      color: var(--preto-profundo);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: var(--verde-escuro);
+      color: var(--branco-puro);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(11, 61, 46, 0.3); /* Sombra com verde escuro */
+    }
+    .logo {
+      font-weight: 900;
+      font-size: 2rem;
+      position: relative;
+      user-select: none;
+      color: var(--branco-puro);
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      top: 0.3rem;
+      left: 1.6rem;
+      width: 1.2rem;
+      height: 0.15rem;
+      background: linear-gradient(90deg, transparent, var(--verde-vibrante), transparent);
+      transform: skew(-20deg);
+      border-radius: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      color: var(--branco-puro);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    nav a:hover, nav a:focus {
+      border-bottom-color: var(--verde-vibrante);
+      color: var(--verde-vibrante);
+    }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      background: var(--branco-puro);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(11, 61, 46, 0.2); /* Sombra com verde escuro */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      color: var(--preto-profundo);
+    }
+    .car-image {
+      flex: 1 1 300px;
+      max-width: 400px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(11, 61, 46, 0.15); /* Sombra sutil com verde */
+    }
+    .car-info {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .car-info h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--verde-escuro); /* Título em verde escuro para destaque */
+      margin-bottom: 1rem;
+    }
+    .car-info p {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      color: var(--cinza-chumbo); /* Textos secundários em cinza chumbo */
+    }
+    .car-price {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--verde-vibrante); /* Preço em verde vibrante para destaque moderno */
+      margin: 1rem 0;
+    }
+    .btn-back {
+      background: var(--verde-escuro);
+      color: var(--branco-puro);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-weight: 700;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      width: fit-content;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      margin-top: 1rem;
+      align-self: flex-start;
+    }
+    .btn-back:hover, .btn-back:focus {
+      background: var(--verde-vibrante);
+      box-shadow: 0 4px 8px rgba(0, 168, 107, 0.3); /* Hover com verde vibrante e sombra */
+      outline: none;
+    }
+    footer {
+      background: var(--verde-escuro);
+      color: var(--branco-puro);
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      margin-top: auto;
+    }
+    @media (max-width: 700px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+      .car-image, .car-info {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" aria-label="Logo Ribeiro Multimarcas">R</div>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html" tabindex="0">Início</a></li>
+        <li><a href="index.html#carros" tabindex="0">Carros</a></li>
+        <li><a href="#" tabindex="0">Sobre</a></li>
+        <li><a href="#" tabindex="0">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <img src="https://cdn.motor1.com/images/mgl/0AN2r/s1/volkswagen-golf-gti.jpg" alt="Volkswagen Golf 2.0 TSI vermelho" class="car-image" />
+    <div class="car-info">
+      <h1>Volkswagen Golf 2.0 TSI</h1>
+      <p><strong>Ano:</strong> 2023/2024</p>
+      <p><strong>Quilometragem:</strong> 12.000 km</p>
+      <p><strong>Câmbio:</strong> Automático</p>
+      <p class="car-price">R$ 145.900</p>
+      <p>O Volkswagen Golf 2.0 TSI é um hatch esportivo que combina desempenho, conforto e tecnologia. Ideal para quem busca um carro versátil, com design moderno e excelente dirigibilidade.</p>
+      <button class="btn-back" onclick="window.history.back()" aria-label="Voltar para a lista de carros">Voltar</button>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2024 Ribeiro Multimarcas. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
