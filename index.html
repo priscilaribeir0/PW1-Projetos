@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ribeiro Multimarcas - Seu carro novo está aqui</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Nova paleta de cores: Dourado + Preto */
+    :root {
+      --dourado-metalico: #FFD700;    /* Principal: destaque e elegância */
+      --dourado-escuro: #B8860B;      /* Profundidade e variação */
+      --preto-profundo: #0A0A0A;      /* Fundo e contraste */
+      --cinza-grafite: #2E2E2E;       /* Detalhes discretos */
+      --branco: #FFFFFF;              /* Equilíbrio e legibilidade */
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--preto-profundo); /* Base preta */
+      color: var(--branco); /* Textos principais em branco para contraste */
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--dourado-metalico);
+    }
+
+    header {
+      background-color: var(--preto-profundo);
+      color: var(--branco);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(184, 134, 11, 0.3); /* Sombra com dourado escuro */
+    }
+
+    /* Logo com letra R estilizada em dourado */
+    .logo {
+      font-weight: 900;
+      font-size: 2rem;
+      font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
+      letter-spacing: 0.1em;
+      position: relative;
+      color: var(--dourado-metalico); /* Dourado metálico para elegância */
+      cursor: default;
+      user-select: none;
+    }
+
+    /* Linha de movimento no R com degradê dourado */
+    .logo::after {
+      content: '';
+      position: absolute;
+      top: 0.3rem;
+      left: 1.6rem;
+      width: 1.2rem;
+      height: 0.15rem;
+      background: linear-gradient(90deg, transparent, var(--dourado-escuro), transparent);
+      transform: skew(-20deg);
+      border-radius: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      border-bottom: 2px solid var(--dourado-metalico);
+      color: var(--dourado-metalico);
+    }
+
+    /* Estilos para a Página Principal */
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Seção hero */
+    .hero {
+      background-color: var(--preto-profundo);
+      color: var(--branco);
+      padding: 4rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 10px rgba(184, 134, 11, 0.5); /* Sombra com dourado escuro */
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
+      color: var(--dourado-metalico); /* Título em dourado para destaque */
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      font-weight: 600;
+      font-style: italic;
+      letter-spacing: 0.05em;
+      color: var(--branco);
+    }
+
+    /* Grid de carros */
+    .car-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .car-card {
+      background-color: var(--cinza-grafite); /* Fundo cinza grafite para discrição */
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(184, 134, 11, 0.1); /* Sombra sutil com dourado escuro */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2); /* Hover com dourado metálico */
+    }
+
+    .car-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: var(--preto-profundo); /* Fundo preto para imagens */
+    }
+
+    .car-info {
+      padding: 1rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .car-info h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--dourado-metalico); /* Títulos em dourado */
+    }
+
+    .car-details {
+      font-size: 0.9rem;
+      color: var(--branco); /* Detalhes em branco para legibilidade */
+      margin-bottom: 1rem;
+    }
+
+    .car-price {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--dourado-metalico); /* Preços em dourado metálico */
+      margin-bottom: 1rem;
+    }
+
+    .btn-details {
+      background-color: var(--dourado-metalico);
+      color: var(--preto-profundo); /* Texto preto no botão dourado para contraste */
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      align-self: flex-start;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-details:hover,
+    .btn-details:focus {
+      background-color: var(--dourado-escuro); /* Hover com dourado escuro para profundidade */
+      box-shadow: 0 4px 8px rgba(184, 134, 11, 0.3);
+      outline: none;
+    }
+
+    footer {
+      background-color: var(--preto-profundo);
+      color: var(--branco);
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      margin-top: auto;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <img src="imagens/ribeiro.jpg" width="200" height="100"alt="Logo Ribeiro Multimarcas" class="logo" />
+  <nav aria-label="Menu principal">
+    <ul>
+      <li><a href="#inicio" tabindex="0">Início</a></li>
+      <li><a href="#carros" tabindex="0">Carros</a></li>
+      <li><a href="#" tabindex="0">Sobre</a></li>
+      <li><a href="#" tabindex="0">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <!-- Seção Hero -->
+    <section id="inicio" class="hero">
+      <h1>Ribeiro Multimarcas</h1>
+      <p>Seu carro novo está aqui</p>
+    </section>
+
+    <!-- Lista de Carros -->
+    <section id="carros" class="car-list">
+      <!-- Card 1: Volkswagen Golf -->
+      <article class="car-card" aria-label="Volkswagen Golf 2.0 TSI">
+        <img src="imagens/Golf.jpg" alt="Volkswagen Golf 2.0 TSI vermelho" class="car-image" />
+        <div class="car-info">
+          <h3>Volkswagen Golf 2.0 TSI</h3>
+          <div class="car-details">
+            <p>Ano: 2023/2024 | 12.000 km | Automático</p>
+          </div>
+          <p class="car-price">R$ 145.900</p>
+          <a href="detalhes-golf.html" class="btn-details" tabindex="0" aria-label="Ver detalhes do Volkswagen Golf">Ver detalhes</a>
+        </div>
+      </article>
+
+      <!-- Card 2: Honda Civic -->
+      <article class="car-card" aria-label="Honda Civic Touring 1.5 Turbo">
+        <img src="imagens/Civic.jpeg" alt="Honda Civic Touring 1.5 Turbo prata" class="car-image" />
+        <div class="car-info">
+          <h3>Honda Civic Touring 1.5 Turbo</h3>
+          <div class="car-details">
+            <p>Ano: 2022/2022 | 25.000 km | Automático</p>
+          </div>
+          <p class="car-price">R$ 125.800</p>
+          <a href="detalhes-civic.html" class="btn-details" tabindex="0" aria-label="Ver detalhes do Honda Civic">Ver detalhes</a>
+        </div>
+      </article>
+
+      <!-- Card 3: Toyota Corolla -->
+      <article class="car-card" aria-label="Toyota Corolla Altis Hybrid">
+        <img src="imagens/Corolla.jpeg" alt="Toyota Corolla Altis Hybrid branco" class="car-image" />
+        <div class="car-info">
+          <h3>Toyota Corolla Altis Hybrid</h3>
+          <div class="car-details">
+            <p>Ano: 2023/2023 | 8.000 km | Automático</p>
+          </div>
+          <p class="car-price">R$ 168.500</p>
+          <a href="detalhes-corolla.html" class="btn-details" tabindex="0" aria-label="Ver detalhes do Toyota Corolla">Ver detalhes</a>
+        </div>
+      </article>
+
+      <!-- Card 4: Fiat Strada -->
+      <article class="car-card" aria-label="Fiat Strada Freedom 1.3">
+        <img src="imagens/Strada.jpeg" alt="Fiat Strada Freedom 1.3 prata" class="car-image" />
+        <div class="car-info">
+          <h3>Fiat Strada Freedom 1.3</h3>
+          <div class="car-details">
+            <p>Ano: 2021/2022 | 35.000 km | Manual</p>
+          </div>
+          <p class="car-price">R$ 78.900</p>
+          <a href="detalhes-strada.html" class="btn-details" tabindex="0" aria-label="Ver detalhes do Fiat Strada">Ver detalhes</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Ribeiro Multimarcas. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
